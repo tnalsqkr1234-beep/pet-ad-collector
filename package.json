@@ -1,0 +1,13 @@
+{
+  "name": "pet-ad-cloud-collector",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "collect": "node collect.mjs",
+    "check": "node --check collect.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.55.0"
+  }
+}
