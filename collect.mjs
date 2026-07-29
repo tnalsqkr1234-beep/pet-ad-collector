@@ -137,7 +137,7 @@ function keywordUrl(name) {
 }
 
 async function collectCompetitor(competitor) {
-  const url = competitor.pageId ? pageUrl(competitor.pageId) : keywordUrl(competitor.name);
+  const url = competitor.pageId ? pageUrl(competitor.pageId) : keywordUrl(competitor.keyword || competitor.name);
   console.log(`[collect] ${competitor.name} (${competitor.pageId ? "page" : "keyword"})`);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
   await sleep(6000);
