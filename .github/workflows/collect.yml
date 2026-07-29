@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
-      DASHBOARD_URL: https://pet-ad-reference.tnalsqkr1234.chatgpt.site
+      DASHBOARD_URL: https://commerce-ax-dashboard.tnalsqkr1234.chatgpt.site
       COLLECTOR_INGEST_TOKEN: ${{ secrets.COLLECTOR_INGEST_TOKEN }}
       DASHBOARD_BYPASS_TOKEN: ${{ secrets.DASHBOARD_BYPASS_TOKEN }}
     steps:
