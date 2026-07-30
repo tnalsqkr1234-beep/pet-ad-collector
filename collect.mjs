@@ -2,17 +2,13 @@ import { chromium } from "playwright";
 
 const dashboard = (process.env.DASHBOARD_URL || "").replace(/\/$/, "");
 const ingestToken = process.env.COLLECTOR_INGEST_TOKEN || "";
-const bypassToken = process.env.DASHBOARD_BYPASS_TOKEN || "";
 const headers = {
   Authorization: `Bearer ${ingestToken}`,
-  "OAI-Sites-Authorization": `Bearer ${bypassToken}`,
 };
 const today = new Date().toISOString().slice(0, 10);
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-if (!dashboard || !ingestToken || !bypassToken) {
-  throw new Error("DASHBOARD_URL, COLLECTOR_INGEST_TOKEN, DASHBOARD_BYPASS_TOKEN secrets are required.");
-}
+if (!dashboard || !ingestToken) {\n  throw new Error("DASHBOARD_URL and COLLECTOR_INGEST_TOKEN are required.");\n}
 
 async function dashboardJson(path, options = {}) {
   const response = await fetch(`${dashboard}${path}`, {
