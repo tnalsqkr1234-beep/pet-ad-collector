@@ -19,7 +19,6 @@ jobs:
     env:
       DASHBOARD_URL: https://commerce-ax-dashboard.tnalsqkr1234.chatgpt.site
       COLLECTOR_INGEST_TOKEN: ${{ secrets.COLLECTOR_INGEST_TOKEN }}
-      DASHBOARD_BYPASS_TOKEN: ${{ secrets.DASHBOARD_BYPASS_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
