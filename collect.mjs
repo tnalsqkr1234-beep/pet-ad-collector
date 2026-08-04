@@ -8,7 +8,9 @@ const headers = {
 const today = new Date().toISOString().slice(0, 10);
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-if (!dashboard || !ingestToken) {\n  throw new Error("DASHBOARD_URL and COLLECTOR_INGEST_TOKEN are required.");\n}
+if (!dashboard || !ingestToken) {
+  throw new Error("DASHBOARD_URL and COLLECTOR_INGEST_TOKEN are required.");
+}
 
 async function dashboardJson(path, options = {}) {
   const response = await fetch(`${dashboard}${path}`, {
